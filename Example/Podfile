@@ -1,0 +1,21 @@
+source 'https://git.corp.hetao101.com/app/source-specs.git'
+
+use_frameworks!
+
+platform :ios, '10.0'
+supports_swift_versions '>= 5.0'
+
+# 共用组件
+def common_pods
+  pod 'Caitlyn', :path => '../'
+end
+
+# 宿主项目target
+target 'Caitlyn_Example' do
+  common_pods
+end
+
+# 测试target
+target 'Caitlyn_Tests' do
+  common_pods
+end
