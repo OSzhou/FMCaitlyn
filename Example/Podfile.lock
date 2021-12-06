@@ -1,0 +1,16 @@
+PODS:
+  - Caitlyn (0.1.0)
+
+DEPENDENCIES:
+  - Caitlyn (from `../`)
+
+EXTERNAL SOURCES:
+  Caitlyn:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Caitlyn: 649efc49a2517e52b41bed66cab92de0643d3410
+
+PODFILE CHECKSUM: 24442d19fa6b3ed0cf821299b60b7c4af9de1b45
+
+COCOAPODS: 1.10.2

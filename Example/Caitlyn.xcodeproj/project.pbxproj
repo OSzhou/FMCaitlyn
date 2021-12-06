@@ -27,7 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		042AACF920F73E3F3596E014 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		042AACF920F73E3F3596E014 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		49DAEDDDB9389A9BCA0BA54A /* Pods-Caitlyn_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caitlyn_Tests.release.xcconfig"; path = "Target Support Files/Pods-Caitlyn_Tests/Pods-Caitlyn_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Caitlyn_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caitlyn_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,12 +38,12 @@
 		607FACE51AFB9204008FA782 /* Caitlyn_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Caitlyn_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		65091C2CBCA6C906342B996E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		65091C2CBCA6C906342B996E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		7A78755BE3E333B56D769D21 /* Pods_Caitlyn_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Caitlyn_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B845D3FCECF668F06B21AEEE /* Pods-Caitlyn_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caitlyn_Example.debug.xcconfig"; path = "Target Support Files/Pods-Caitlyn_Example/Pods-Caitlyn_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C9CD7FD49C982E98B1259803 /* Pods_Caitlyn_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Caitlyn_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6B66C79F631E2B11096691 /* Pods-Caitlyn_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caitlyn_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Caitlyn_Tests/Pods-Caitlyn_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		F63D584FF87CC90C99A59130 /* Caitlyn.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = Caitlyn.podspec; path = ../Caitlyn.podspec; sourceTree = "<group>"; };
+		F63D584FF87CC90C99A59130 /* Caitlyn.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Caitlyn.podspec; path = ../Caitlyn.podspec; sourceTree = "<group>"; };
 		F7D7757E6FF4A734BA5C5D2C /* Pods-Caitlyn_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caitlyn_Example.release.xcconfig"; path = "Target Support Files/Pods-Caitlyn_Example/Pods-Caitlyn_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +75,6 @@
 				CE6B66C79F631E2B11096691 /* Pods-Caitlyn_Tests.debug.xcconfig */,
 				49DAEDDDB9389A9BCA0BA54A /* Pods-Caitlyn_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -457,13 +456,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Caitlyn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hetao.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -474,13 +474,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Caitlyn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hetao.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
