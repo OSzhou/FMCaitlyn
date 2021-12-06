@@ -208,10 +208,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 8G78CU738B;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 8G78CU738B;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -454,6 +456,7 @@
 			baseConfigurationReference = B845D3FCECF668F06B21AEEE /* Pods-Caitlyn_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8G78CU738B;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Caitlyn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -472,6 +475,7 @@
 			baseConfigurationReference = F7D7757E6FF4A734BA5C5D2C /* Pods-Caitlyn_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8G78CU738B;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Caitlyn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -489,6 +493,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE6B66C79F631E2B11096691 /* Pods-Caitlyn_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 8G78CU738B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -511,6 +516,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 49DAEDDDB9389A9BCA0BA54A /* Pods-Caitlyn_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 8G78CU738B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
