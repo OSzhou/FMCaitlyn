@@ -39,6 +39,7 @@ public class FaceTracker: NSObject {
     private var videoDataOutputQueue: DispatchQueue?
     private var faceDetector: CIDetector?
     private var isCIDetector: Bool = false
+    private var isRunning: Bool = false
     
     public init(delegate: FaceTrackerDelegate) {
         super.init()
@@ -50,11 +51,20 @@ public class FaceTracker: NSObject {
     }
     
     public func startRunning() {
+        isRunning = true
         previewLayer?.session?.startRunning()
+        fluidUpdateInterval(interval: updateInterval, withReactionFactor: reactionFactor)
     }
     
     public func stopRunning() {
+        isRunning = false
         previewLayer?.session?.stopRunning()
+    }
+    
+    deinit {
+        #if DEBUG
+        print("face tracker deinit")
+        #endif
     }
     
     // 设置刷新间隔
@@ -78,7 +88,7 @@ public class FaceTracker: NSObject {
         } else {
             delegate?.fluentUpdateDistance(distance: distance, isCIDetector: isCIDetector)
         }
-
+        guard isRunning else { return }
         // Make sure we do a recalculation 10 times every second in order to make sure we animate to the final position.
         self.perform(#selector(setDistance), with: nil, afterDelay: TimeInterval(updateInterval))
     }
@@ -135,7 +145,7 @@ public class FaceTracker: NSObject {
         }
         
         connection?.videoScaleAndCropFactor = 1.0
-        
+        isRunning = true
         session.startRunning()
         
         // connect the front camara to the preview layer
