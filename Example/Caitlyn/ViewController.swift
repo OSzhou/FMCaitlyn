@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         faceTracker = FaceTracker(delegate: self)
-        faceTracker?.fluidUpdateInterval(interval: 0.1, withReactionFactor: 0.5)
+        faceTracker?.fluidUpdateInterval(interval: 0.1)
         
 //        evTracker?.previewLayer.add(to: view).layout { make in
 //            make.center.equalToSuperview()
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         distanceLabel.frame.size = CGSize(width: 500, height: 500)
         distanceLabel.center = view.center
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: FaceTrackerDelegate {
-    func faceIsTracked(faceRect: CGRect, withOffsetWidth offsetWidth: CGFloat, andOffsetHeight offsetHeight: CGFloat, andDistance distance: CGFloat, isCIDetector: Bool) {
+    func faceIsTracked(faceRect: CGRect, andDistance distance: CGFloat, isCIDetector: Bool) {
 //        print("distance --- \(distance)")
         distanceLabel.text = "距离：\(distance) 厘米"
     }
