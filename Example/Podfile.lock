@@ -1,5 +1,5 @@
 PODS:
-  - Caitlyn (1.1.0)
+  - Caitlyn (1.1.2)
 
 DEPENDENCIES:
   - Caitlyn (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Caitlyn: 691bb471324cd94023ab5dfdbaaa6f6d3d984921
+  Caitlyn: bb093c02b56a8fd69c5922839e02f4e5f4451bb8
 
 PODFILE CHECKSUM: 24442d19fa6b3ed0cf821299b60b7c4af9de1b45
 

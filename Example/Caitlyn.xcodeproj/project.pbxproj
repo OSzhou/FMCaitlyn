@@ -43,7 +43,7 @@
 		B845D3FCECF668F06B21AEEE /* Pods-Caitlyn_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caitlyn_Example.debug.xcconfig"; path = "Target Support Files/Pods-Caitlyn_Example/Pods-Caitlyn_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C9CD7FD49C982E98B1259803 /* Pods_Caitlyn_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Caitlyn_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6B66C79F631E2B11096691 /* Pods-Caitlyn_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caitlyn_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Caitlyn_Tests/Pods-Caitlyn_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		F63D584FF87CC90C99A59130 /* Caitlyn.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Caitlyn.podspec; path = ../Caitlyn.podspec; sourceTree = "<group>"; };
+		F63D584FF87CC90C99A59130 /* Caitlyn.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Caitlyn.podspec; path = ../Caitlyn.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F7D7757E6FF4A734BA5C5D2C /* Pods-Caitlyn_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caitlyn_Example.release.xcconfig"; path = "Target Support Files/Pods-Caitlyn_Example/Pods-Caitlyn_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

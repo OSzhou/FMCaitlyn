@@ -53,7 +53,7 @@ public class FaceTracker: NSObject {
     public func startRunning() {
         isRunning = true
         previewLayer?.session?.startRunning()
-        fluidUpdateInterval(interval: updateInterval, withReactionFactor: reactionFactor)
+//        fluidUpdateInterval(interval: updateInterval, withReactionFactor: reactionFactor)
     }
     
     public func stopRunning() {
@@ -99,18 +99,24 @@ public class FaceTracker: NSObject {
             session.canSetSessionPreset(.medium)
         } else {
             session.canSetSessionPreset(.photo)
-        }*/
-        session.canSetSessionPreset(.medium)
+        }
+        
+        if session.canSetSessionPreset(.medium) {
+            session.beginConfiguration()
+            session.sessionPreset = .medium
+            session.commitConfiguration()
+        }
         
         guard let device = AVCaptureDevice.default(for: .video) else { return false }
+
         guard let deviceInput = try? AVCaptureDeviceInput(device: device) else { return false}
-                
+
         if session.canAddInput(deviceInput) {
             session.addInput(deviceInput)
         }
         
         // Make a still image output
-        /*stillImageOutput = [AVCaptureStillImageOutput new];
+        stillImageOutput = [AVCaptureStillImageOutput new];
         [stillImageOutput addObserver:self forKeyPath:@"capturingStillImage" options:NSKeyValueObservingOptionNew context:@"AVCaptureStillImageIsCapturingStillImageContext"];
         if ([session canAddOutput:stillImageOutput]) {
             [session addOutput:stillImageOutput];
@@ -145,6 +151,7 @@ public class FaceTracker: NSObject {
         }
         
         connection?.videoScaleAndCropFactor = 1.0
+        
         isRunning = true
         session.startRunning()
         
@@ -152,6 +159,7 @@ public class FaceTracker: NSObject {
         guard let frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) else { return false }
         
         previewLayer.session?.beginConfiguration()
+        
         if let input = try? AVCaptureDeviceInput(device: frontCamera) {
             if let inputs = previewLayer.session?.inputs {
                 for oldInput in inputs {
@@ -160,6 +168,20 @@ public class FaceTracker: NSObject {
             }
             
             previewLayer.session?.addInput(input)
+            
+            // 设置采样率
+            do {
+                try frontCamera.lockForConfiguration()
+                
+                let desiredFrameDuration = CMTimeMake(value: 1, timescale: 3)
+                frontCamera.activeVideoMaxFrameDuration = desiredFrameDuration
+                frontCamera.activeVideoMinFrameDuration = desiredFrameDuration
+                
+                frontCamera.unlockForConfiguration()
+            } catch {
+                print("config front camera failure --- \(error)")
+            }
+            
             previewLayer.session?.commitConfiguration()
         }
         
@@ -417,12 +439,13 @@ extension FaceTracker: AVCaptureVideoDataOutputSampleBufferDelegate {
                 }
             }
             var originD = floor(self.distance)
-            if originD == 24 || originD == 25 {
+            if originD >= 24 , originD <= 27 { return }
+            /*if originD >= 24 , originD <= 27 {
                 originD = 23
             }
             if originD == 26 || originD == 27 {
                 originD = 28
-            }
+            }*/
             #if DEBUG
             print("distance --- \(originD)")
             #endif
