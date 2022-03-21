@@ -31,6 +31,8 @@ public class FaceTracker: NSObject {
     public var faceRect: CGRect = .zero
     public var reactionFactor: CGFloat = 0.0
     public var updateInterval: CGFloat = 0.0
+    // 采样率：次/秒，默认每秒3次
+    public var frameRate: Int32 = 3
     public var previewLayer: AVCaptureVideoPreviewLayer?
     
     private var previousDistance: CGFloat = 0.0
@@ -157,10 +159,10 @@ public class FaceTracker: NSObject {
         
         // connect the front camara to the preview layer
         guard let frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) else { return false }
-        
-        previewLayer.session?.beginConfiguration()
-        
+                
         if let input = try? AVCaptureDeviceInput(device: frontCamera) {
+            previewLayer.session?.beginConfiguration()
+            
             if let inputs = previewLayer.session?.inputs {
                 for oldInput in inputs {
                     previewLayer.session?.removeInput(oldInput)
@@ -173,7 +175,7 @@ public class FaceTracker: NSObject {
             do {
                 try frontCamera.lockForConfiguration()
                 
-                let desiredFrameDuration = CMTimeMake(value: 1, timescale: 3)
+                let desiredFrameDuration = CMTimeMake(value: 1, timescale: frameRate)
                 frontCamera.activeVideoMaxFrameDuration = desiredFrameDuration
                 frontCamera.activeVideoMinFrameDuration = desiredFrameDuration
                 
@@ -438,7 +440,7 @@ extension FaceTracker: AVCaptureVideoDataOutputSampleBufferDelegate {
                     self.distance = (pref / (abs(hasRightEyePosition.x - leftEyePosition.x) * 0.016)) * 25.0
                 }
             }
-            var originD = floor(self.distance)
+            let originD = floor(self.distance)
             if originD >= 24 , originD <= 27 { return }
             /*if originD >= 24 , originD <= 27 {
                 originD = 23
