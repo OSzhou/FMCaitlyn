@@ -22,7 +22,7 @@ pod 'Caitlyn'
 
 ## Author
 
-Zhouheng, zhouheng@hetao101.com
+Zhouheng, fm939071955@163.com
 
 ## License
 
